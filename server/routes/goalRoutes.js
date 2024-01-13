@@ -3,11 +3,12 @@ const router = express.Router();
 
 const goalController = require('../controllers/goalController');
 
+const {validateToken} = require('../middlewares/JWT')
 
-router.get('/',goalController.getGoals)
-router.post('/',goalController.setGoal)
-router.put('/:id',goalController.updateGoal)
-router.delete('/:id',goalController.deleteGoal)
+router.get('/',validateToken,goalController.getGoals)
+router.post('/',validateToken,goalController.setGoal)
+router.put('/:id',validateToken,goalController.updateGoal)
+router.delete('/:id',validateToken,goalController.deleteGoal)
 
 
 
