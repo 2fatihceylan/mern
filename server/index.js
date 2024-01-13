@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieparser());
 app.use(errorHandler);
 
-
+//deneme
 
 
 const goalRequire = require('./routes/goalRoutes');
